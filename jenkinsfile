@@ -1,6 +1,13 @@
 node {
 
-    checkout scm
+    stage('CheckOut'){
+        checkout scm
+    }
+
+    stage('Testing Enviroment'){
+        sh 'nodejs -v'
+        sh 'npm -v'
+    }
 
     stage('ESlint'){
         timestamps {
