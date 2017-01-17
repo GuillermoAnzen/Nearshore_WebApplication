@@ -12,7 +12,7 @@ node {
 
     stage('ESlint'){
         timestamps {
-            echo "ESling"
+            sh 'gulp eslint:dev'
         }
     }
 
