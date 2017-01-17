@@ -7,13 +7,13 @@ node {
     stage('Configuring Enviroment'){
         sh 'nodejs -v'
         sh 'npm -v'
-        sh 'npm install'
+        sh 'npm install --no-optional'
+        sh 'npm shrinkwrap --dev'
     }
 
     stage('ESlint'){
         timestamps {
-            sh 'npm install --no-optional'
-            sh 'npm shrinkwrap --dev'
+            sh 'gulp eslint:dev'
         }
     }
 
