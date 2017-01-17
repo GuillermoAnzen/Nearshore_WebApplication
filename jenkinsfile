@@ -12,7 +12,8 @@ node {
 
     stage('ESlint'){
         timestamps {
-            sh 'gulp eslint:dev'
+            sh 'npm install --no-optional'
+            sh 'npm shrinkwrap --dev'
         }
     }
 
