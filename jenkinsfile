@@ -1,0 +1,24 @@
+node {
+
+    stage('ESlint'){
+        timestamps {
+            npm install
+            gulp eslint:dev
+            echo "Building"
+        }
+    }
+
+    stage('Build'){
+        timestamps {
+            gulp webpack:dev
+            echo "Testing"
+        }
+    }
+
+    stage('Deploy'){
+        timestamps {
+            echo "Deploying"
+        }
+    }
+
+}
