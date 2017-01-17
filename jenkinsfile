@@ -1,23 +1,22 @@
 node {
 
+    checkout scm
+
     stage('ESlint'){
         timestamps {
-            npm install
-            gulp eslint:dev
-            echo "Building"
+            echo "ESling"
         }
     }
 
     stage('Build'){
         timestamps {
-            gulp webpack:dev
-            echo "Testing"
+            echo "Building"
         }
     }
 
-    stage('Deploy'){
+    stage('Testing'){
         timestamps {
-            echo "Deploying"
+            echo "Testing"
         }
     }
 
