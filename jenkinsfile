@@ -4,9 +4,10 @@ node {
         checkout scm
     }
 
-    stage('Testing Enviroment'){
+    stage('Configuring Enviroment'){
         sh 'nodejs -v'
         sh 'npm -v'
+        sh 'npm install'
     }
 
     stage('ESlint'){
