@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
 </head>
-<body ng-app="myApp">
-    <a style="font-weight: bold; font-size: 1.5em" href="./docs">Documentación</a>
-    <div ng-controller="myController1">
-        <h1>Este es un título seriamente
-        </h1>
-        <input type="text" ng-model="variable">
-        <p>{{variable}}</p>
+
+<body ng-app="app">
+
+    <div class="container">
+
+        <div ng-view="">
+
+        </div>
 
     </div>
-    <escribe-pablo></escribe-pablo>
-    <escribe-pablo></escribe-pablo>
-    <escribe-pablo></escribe-pablo>
-    
-    
 
-    </body>
+    <style>
+        body {
+            padding-top: 21px;
+            padding-bottom: 20px;
+        }
+    </style>
+
+</body>
+
 </html>

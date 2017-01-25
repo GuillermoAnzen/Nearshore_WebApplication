@@ -1,39 +1,62 @@
-require('angular');
-
-var app = angular.module('myApp', []);
+var angular = require('angular');
 
 /**
- * @ngdoc controller
- * @name myApp.controller:myController1
+ * @ngdoc overview
+ * @name app
+ * @requires angular-route
+ * @requires angular-sanitize
+ * @requires angular-translate
  * @description
- * Descripción del ntrolador generado
+ * This is the aplication's main module.
+ * Additionally this module depens from the all modules contained in the /src/modules path.
  */
 
-app.controller('myController1', function () {
-	var cinco = {
-		'cinco'           : 5123,
-		'tres'            : 4,
-		'variableDeNombre': 100,
-		'escapes'         : {
-			'sadfasdf': 123,
-			'asf'     : 1234
-		}
-	};
-});
+var app = angular.module('app', [
+    require('angular-route'),
+    require('angular-sanitize'),
+    require('angular-translate')
+].concat(getModuleDependencies()));
+
+app.config(['$translateProvider',
+    '$routeProvider',
+    '$locationProvider',
+    'localeProvider',
+    function(
+        $translateProvider,
+        $routeProvider,
+        $locationProvider,
+        localeProvider
+    ) {
+
+        /***** i18n Configuration *****/
+        localeProvider.init(require.context('./i18n/', false, /.js$/));
+        /***** i18n Configuration *****/
+
+        /***** routes Configuration *****/
+        //$locationProvider.hashPrefix('!');
+        $routeProvider.otherwise({ redirectTo: '/login' });
+
+    }
+]);
 
 /**
- * @ngdoc directive
- * @name myApp.directive:escribePablo
- * @scope
- * @restrict E
+ * @ngdoc function
+ * @name getModuleDependencies
+ * @methodOf app
  * @description
- * Directiva que imprime la palabra "Pablo" dentro de una etiqueta h1
- *
- * */
+ * Descripción del metodo
+ * @param {undefined} This function does not get parameters.
+ * @returns {undefined} It doesn't return
+ */
 
-app.directive('escribePablo',  function () {
-	return {
-		restrict: 'E',
-		template: '<h1>Pablo</h1>'
-	};
-});
+function getModuleDependencies() {
+    var moduleDep = [];
+    var loadModules = require.context('./modules', true, /main.js$/);
+    for (var i = 0; i < loadModules.keys().length; i++) {
+        moduleDep.push(loadModules(loadModules.keys()[i]).name);
+    }
+    return moduleDep;
+}
+
+require('./css/index.less');
+require('./css/index.scss');

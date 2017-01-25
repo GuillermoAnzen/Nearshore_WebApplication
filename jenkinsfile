@@ -19,7 +19,7 @@ node {
 
     stage('Build'){
         timestamps {
-            echo "Building"
+            sh 'gulp webpack:dev'
         }
     }
 

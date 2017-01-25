@@ -16,11 +16,11 @@ gulp.task('watch:dev', function() {
     setVariable('dev');
     runSequence('watch');
 });
-gulp.task('eslint:dev', function(){
+gulp.task('eslint:dev', function() {
     setVariable('dev');
     runSequence('lint');
 });
-gulp.task('webpack:dev', function(){
+gulp.task('webpack:dev', function() {
     setVariable('dev');
     runSequence('webpackTask');
 });
@@ -33,13 +33,13 @@ gulp.task('serve:dev', function() {
 /* DISTRIBUTION TASKS */
 gulp.task('build:dist', function() {
     setVariable('dist');
-    runSequence('eslint:dist', 'webpack:dist', 'ngdoc:dist');
+    runSequence('clean', 'eslint:dist', 'webpack:dist', 'ngdoc:dist');
 });
-gulp.task('eslint:dist', function(){
+gulp.task('eslint:dist', function() {
     setVariable('dist');
     runSequence('lint');
 });
-gulp.task('webpack:dist', function(){
+gulp.task('webpack:dist', function() {
     setVariable('dist');
     runSequence('webpackTask');
 });
@@ -53,14 +53,14 @@ gulp.task('serve:dist', function() {
 /* TESTING TASKS */
 gulp.task('build:test', function() {
     setVariable('test');
-    runSequence('eslint:test', 'webpack:test');
+    runSequence('clean', 'eslint:test', 'webpack:test');
 });
-gulp.task('eslint:test', function(){
+gulp.task('eslint:test', function() {
     setVariable('test');
     runSequence('lint');
 });
 
-gulp.task('webpack:test', function(){
+gulp.task('webpack:test', function() {
     setVariable('test');
     runSequence('webpackTask');
 });

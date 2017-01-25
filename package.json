@@ -10,6 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.6",
+    "clean-webpack-plugin": "^0.1.15",
+    "css-loader": "^0.26.1",
+    "del": "^2.2.2",
     "eslint": "^3.12.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
@@ -18,15 +21,27 @@
     "gulp-hub": "^0.8.0",
     "gulp-livereload": "^3.8.1",
     "gulp-ngdocs": "^0.3.0",
+    "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.26.0",
     "jasmine-core": "^2.5.2",
     "karma": "^1.4.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "node-sass": "^4.3.0",
     "run-sequence": "^1.2.2",
+    "sass-loader": "^4.1.1",
+    "style": "0.0.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-cleanup-plugin": "^0.4.1",
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
-    "angular": "^1.6.1"
+    "angular": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "angular-sanitize": "^1.6.1",
+    "angular-translate": "^2.13.1"
   }
 }

@@ -2,7 +2,7 @@ const gulp      = require('gulp');
 var eslint      = require('gulp-eslint');
 
 gulp.task('lint', function(){
-    return gulp.src('../src/app.js')
+    return gulp.src(['../src/**/*.js'])
     .pipe(eslint(
         {
             configFile: "../conf/" + process.env.NODE_ENV + "/.eslintrc.js",
@@ -10,5 +10,5 @@ gulp.task('lint', function(){
         }
     ))
     .pipe(eslint.format())
-    .pipe(gulp.dest('../src'));
+    .pipe(eslint.failAfterError())
 });
