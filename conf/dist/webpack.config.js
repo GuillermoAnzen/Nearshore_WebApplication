@@ -22,22 +22,5 @@ config.plugins = [
         mangle: false
     })
 ];
-config.module = {
-    loaders: [{
-            test: /.html$/,
-            loaders: [
-                'html'
-            ]
-        },
-        {
-            test: /\.less$/,
-            loader: "style!css!less"
-        },
-        {
-            test: /\.scss$/,
-            loader: "style!css!sass"
-        }
-    ]
-};
 
 module.exports = config;
