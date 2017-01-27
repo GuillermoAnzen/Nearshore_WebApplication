@@ -12,10 +12,6 @@ gulp.task('build:dev', function() {
     setVariable('dev');
     runSequence('clean', 'eslint:dev', 'webpack:dev');
 });
-gulp.task('watch:dev', function() {
-    setVariable('dev');
-    runSequence('watch');
-});
 gulp.task('eslint:dev', function() {
     setVariable('dev');
     runSequence('lint');

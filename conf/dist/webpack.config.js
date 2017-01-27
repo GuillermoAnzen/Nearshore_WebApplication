@@ -1,7 +1,8 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var config = require('../webpack.conf');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const config = require('../webpack.conf');
 const pkg = require('../../package.json');
-var webpack = require('webpack-stream');
+const webpack = require('webpack-stream');
+const webpackPlugin = require('webpack');
 
 config.context = __dirname + '';
 config.entry = {
@@ -20,6 +21,10 @@ config.plugins = [
     new webpack.webpack.optimize.UglifyJsPlugin({
         compress: { unused: true, dead_code: true, warnings: false },
         mangle: false
+    }),
+    new webpackPlugin.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
     })
 ];
 
