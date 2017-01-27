@@ -1,13 +1,12 @@
-<div class="col-md-4" ng-app="app.login">
+<div class="col-md-4">
     <section class="login-form">
-        <form method="post" action="#" role="login">
+        <form role="login">
             <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="">
-            <input type="text" name="text" placeholder="Usuario" required="" class="form-control input-lg">
+            <input id="user" type="text" name="text" placeholder="Usuario" class="form-control input-lg">
 
-            <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="">
+            <input type="password" class="form-control input-lg" id="password" placeholder="Password">
 
-            <br><button type="submit" name="go" class="btn btn-lg btn-primary btn-block" ng-click="$loginCtrl.validateLogin()">Entrar</button>
-
+            <br><button class="btn btn-lg btn-primary btn-block" ng-click="validateLogin()">Entrar</button>
         </form>
     </section>
 </div>

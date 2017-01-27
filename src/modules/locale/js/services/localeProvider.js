@@ -30,7 +30,7 @@ var localeProvider = function($translateProvider) {
     /**
      * @ngdoc function
      * @name app.locale.function:getLanguages
-     * @description This function get all languages. 
+     * @description This function get all languages availables in the configuration of the application.
      * @param {null} this This function does not get parameters.
      * @returns {Array} Return the reference to languages.
      */

@@ -23,7 +23,7 @@ gulp.task('webpack:dev', function() {
 
 gulp.task('serve:dev', function() {
     setVariable('dev');
-    runSequence('watch:dev');
+    runSequence('watch');
 });
 
 /* DISTRIBUTION TASKS */

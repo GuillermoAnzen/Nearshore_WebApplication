@@ -24,14 +24,18 @@ module.exports = angular.module('app.login', [
 
     $routeProvider.when('/login', {
         template: require('./views/login.html'),
-        controller: require('./js/controllers/loginController').name
+        controller: 'loginCtrl'
     });
-
+    $routeProvider.when('/principal', {
+        template: require('./views/main.html'),
+        controller: 'loginCtrl'
+    });
 }]);
 
 
-//var loadFiles = require.context('./js', true, /.js$/);
-//for(var i = 0; i < loadFiles.keys().length; i++){
-//	loadFiles(loadFiles.keys()[i]);
-//}
+var loadFiles = require.context('./js', true, /.js$/);
+for (var i = 0; i < loadFiles.keys().length; i++) {
+    loadFiles(loadFiles.keys()[i]);
+}
 require('./css/index.scss');
+//require('./js/controllers/loginController');

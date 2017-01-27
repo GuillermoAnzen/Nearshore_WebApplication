@@ -4,7 +4,7 @@ module.exports = {
         "commonjs": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    //"extends": "eslint:recommended",
     "rules": {
         "indent": [
             "error",
@@ -22,7 +22,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "space-infix-ops": ["error", {"int32Hint": true}],
-        "key-spacing" : ["error", {"align":"colon"}]
+        "space-infix-ops": ["error", { "int32Hint": true }],
+        "key-spacing": ["error", { "align": "colon" }]
     }
 }
