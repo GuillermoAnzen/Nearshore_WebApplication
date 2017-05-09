@@ -1,6 +1,5 @@
-.DS_Store
-.idea/
-.tmp/
-build/
-docs/
-node_modules/
+node_modules
+dist
+.tmp
+bower_components
+test/bower_components
